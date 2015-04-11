@@ -3,10 +3,12 @@
 
 //Create an object called me. Give it a key of name with the value being your name, and another key of age with the value being your age. Then alert your name using dot notation.
 
-  //Code here
+  var me = {
+    name: 'Eric',
+    age: 29,
+  };
 
-
-
+  alert(me.name);
 
 //NEXT PROBLEM
 
@@ -15,17 +17,25 @@
 
 //Make a 'favoriteThings' object that contains the following keys: band, food, person, book, movie, holiday. Have the values to those keys be your favorite thing in that category.
 
-  //Code here
+  var favoriteThings = {
+    band: "ELO",
+    food: "pizza",
+    person: "Fumi",
+    book: "The Sirens of Titan",
+    movie: "The Big Lebowski",
+    holiday: "Christmas"
+  };
 
 
 //After you've made your object, add another key named 'car' with the value being your favorite car and then another key named 'brand' with the value being your favorite brand.
 
-  //Code here
+  favoriteThings.car = "El_Camino";
+  favoriteThings.brand = "Trader_Joes";
 
 
 //Now change the food key in your favoriteThings object to be 'Lettuce' and change the book key in your favoriteThings object to be '50 Shades of Gray'.
 
-  //Code here
+  favoriteThings.food = "Lettuce";
 
 
 
@@ -42,17 +52,20 @@ Set the value of that key to 'chapstick'.
 Using dot notation, add another key (or property) to your backPack object
 that is named color, with the value being the color of your backpack. */
 
-  //Code here
+  var backPack = {};
+  var item = 'firstPocket'
+  backPack[item] = 'chapstick';
+
 
 //After you do the above, alert your entire backPack object.
 
-  //Code here
+  alert(backPack);
 
 /*You probably noticed that it just alerted [object Object].
 Alerting to see the data in your Object doesn't work so well.
 Instead, console.log your whole backPack object and then check out the console. */
 
-  //Code here
+  console.log(backPack);
 
 
 
@@ -64,14 +77,25 @@ Instead, console.log your whole backPack object and then check out the console. 
 
 //Create another 'me' object with the following properties name, age, height, gender, married, eyeColor, hairColor. Fill those properties in with the appropriate values.
 
-  //Code Here
+  var me = {
+    name: 'Eric',
+    age: 29,
+    height: "5'9",
+    gender: 'male',
+    married: true,
+    eyeColor: 'brown',
+    hairColor: 'brown'
+  };
 
 //Now, loop through your object and alert every value. *Tyler --> 24 --> 6'0 --> Male, etc etc
 
-  //Code Here
+  var answer = function(someObject){
+    for (var key in someObject){
+      alert(someObject[key]);
+    };
+  };
 
-
-
+  answer();
 
 //NEXT PROBLEM
 
@@ -80,13 +104,23 @@ Instead, console.log your whole backPack object and then check out the console. 
 
 //Create an Object called 'album' with 5 keys named different song titles that you make up, with the values being the length of each song.
 
-  //Code Here
+  var album = {
+    title1: 1,
+    title2: 2,
+    title3: 3,
+    title4: 4,
+    title5: 5
+  };
 
 //Now, loop through your album object alerting every song title individually.
 
-  //Code Here
+  var songTitles = function(obj){
+    for (var key in obj){
+      alert(key);
+    }
+  };
 
-
+  songTitles(album);
 
 
 //NEXT PROBLEM
@@ -96,14 +130,25 @@ Instead, console.log your whole backPack object and then check out the console. 
 
 //Create an object called states that has 5 US states as properties with the values being their population (doesn't have to be accurate).
 
-  //Code Here
+  var states = {
+    Utah: 2500,
+    Indiana: 6636366,
+    Nebraska: 6363,
+    Maine: 3428834,
+    Kansas: 8
+  };
 
 //Now, loop through your states object and if the states population is greater than 30K, alert that state.
 
-  //Code Here
+  var popCheck = function(obj){
+    for (var key in obj){
+      if (obj[key] > 30000){
+        alert(key);
+      }
+    }
+  }
 
-
-
+  popCheck(states);
 
 //NEXT PROBLEM
 
@@ -121,13 +166,23 @@ var user = {
 /*Above you're given a user object. Loop through the user object checking to make sure
 that each value is truthy. If it's not truthy, remove it from the object. */
 
-  //Code Here
+  var tCheck = function(obj){
+    for (var key in obj){
+      if (!obj[key]){
+        delete obj[key];
+      }
+    }
+  }
+
+  tCheck(user);
+
+  user.key 
 
 //Once you get your truthy Object, Change the remaining values in the object to be specific to you (name: 'your name', username: 'your username'), rather than my information.
 
-  //Code Here
-
-
+  user.name = 'Eric'
+  user.pwHash = 'oiaushdfajhsdf'
+  user.username = 'eric.richards'
 
 
 //NEXT PROBLEM
@@ -149,11 +204,12 @@ var user = {
 //Let's say I, the user, decided to change my name and email address to the following
 // name -> 'Tyler S. McGinnis', email -> 'tyler.mcginnis@devmounta.in'. Make that change.
 
-  //Code Here
+  user.name = 'Tyler S. McGinnis';
+  user.email = 'tylermcginnis@devmounta.in';
 
 //Now call the sayName method that's on the user object which will alert the users email
 
-  //Code Here
+  user.sayName();
 
 
 
@@ -165,18 +221,19 @@ var user = {
 
 //Create an empty object called methodCollection.
 
-  //Code Here
+  var methodCollection = {};
 
 /*Now add two methods (functions that are properties on objects) to your methodCollection
 object. One called 'alertHello' which alerts 'hello' and another method called logHello
  which logs 'hello' to the console. */
 
-  //Code Here
+  methodCollection.alertHello = function(){alert('hello');};
+  methodCollection.logHello = function(){console.log('hello');};
 
 //Now call your alertHello and logHello methods.
 
-  //Code Here
-
+  methodCollection.alertHello();
+  methodCollection.logHello();
 
 
 
@@ -215,14 +272,22 @@ var colt = {
 array with those four objects. After that console.log the length of the Array and make
 sure that it's equal to 4. */
 
-  //Code Here
+  devMountainEmployees.push(tyler, cahlan, ryan, colt);
+
+  devMountainEmployees.length
 
 /*Now let's say Cahlan has a mental breakdown and has to take a leave of absense to 'find himself'.
 Loop through your devMountainEmployees until you find cahlan, then remove him from the array.*/
 
-  //Code Here
+  var removeHim = function(arr){  
+    for (var i = 0; i < arr.length; i++){
+      if (arr[i] === cahlan){
+        arr.splice(i,1)
+      }
+    }
+  };
 
-
+  removeHim(devMountainEmployees);
 
 
 //NEXT PROBLEM
@@ -262,7 +327,7 @@ of Data is to have an Array full of objects. */
 
 //Create an empty array called users.
 
-  //Code Here
+  var users = [];
 
 /*Now add three user objects to your users array. Each user object should contain the
 following properties. name, email, password, username.*/
@@ -275,7 +340,21 @@ var user1 = {
     username: 'infiniateLoop'
 }
 
-//Your Code Here
+var user2 = {
+    name: 'Eric Richards',
+    email: 'ericscottrichards@gmail.com',
+    password: 'nicetry',
+    username: 'ericscottrichards'
+}
+
+var user3 = {
+  name: 'Fumiko',
+  email: 'fumikom@gmail.com',
+  password: 'shazam',
+  username: 'fumikom'
+}
+
+users.push(user1, user2, user3);
 
 /*Now you have a very common data structure. Twitter is a good use case.
 It's easy to imagine that your followers list on Twitter is an Array full or objects
@@ -285,8 +364,15 @@ and those objects contain properties about the specific person you follow.*/
 objects until you find Tyler's account (use tylermcginnis33@gmail.com to find him).
 Once you find the particular indice he's located in, delete him from the array.*/
 
-  //Code Here
+  var removeHim = function(arr){
+    for (var i = 0; i < arr.length; i++){
+      if (arr[i].email === "tylermcginnis33@gmail.com"){
+        arr.splice(i,1);
+      }
+    }
+  }
 
+  removeHim(users);
 //The activity we just did is very much how data works in 'the real world'.
 
 
